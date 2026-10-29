@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Downtown Plumbing &amp; Heating - Plumber in Jersey City, NJ. Call +1-718-858-7070 for a free estimate. Licensed, insured, and locally owned.">
-    <meta name="theme-color" content="#0d3b66">
+    <meta name="theme-color" content="oklch(0.35 0.15 240)">
     <title>Downtown Plumbing &amp; Heating | Plumber in Jersey City</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         
 *,*::before,*::after{box-sizing:border-box}
 :root{
-  --primary:#0d3b66;
-  --primary-dark:#145388;
-  --accent:#f9a826;
-  --accent-hover:#e59412;
+  --primary:oklch(0.35 0.15 240);
+  --primary-hover:oklch(0.30 0.15 240);
+  --accent:oklch(0.70 0.15 85);
+  --accent-hover:oklch(0.65 0.15 85);
   --bg:#fafafa;
   --bg-elevated:#ffffff;
   --text:#1a1a2e;
@@ -32,11 +32,13 @@
   --shadow-md:0 8px 24px rgba(0,0,0,.08);
   --shadow-lg:0 16px 48px rgba(0,0,0,.12);
   --transition:all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --font-sans:&#39;Inter&#39;,system-ui,-apple-system,sans-serif;
+  --font-sans:&#39;Space Grotesk&#39;,system-ui,-apple-system,sans-serif;
+  --font-body:&#39;DM Sans&#39;,system-ui,-apple-system,sans-serif;
   --container:1100px;
   --header-h:72px;
-  --gradient:linear-gradient(135deg, #0d3b66 0%, #145388 100%);
+  --gradient:linear-gradient(135deg, oklch(0.35 0.15 240) 0%, oklch(0.70 0.15 85) 100%);
   --pattern:url(&#39;data:image/svg+xml;utf8,&lt;svg viewBox=&#34;0 0 100 100&#34; preserveAspectRatio=&#34;none&#34;&gt;&lt;path d=&#34;M0,50 Q25,30 50,50 T100,50 V100 H0 Z&#34; fill=&#34;currentColor&#34; opacity=&#34;0.05&#34;/&gt;&lt;/svg&gt;&#39;);
+  --focus-ring:0 0 0 3px color-mix(in oklch, var(--primary) 20%, transparent);
 }
 @media(prefers-color-scheme:dark){
   :root{
@@ -50,10 +52,11 @@
     --shadow:0 2px 8px rgba(0,0,0,.3);
     --shadow-md:0 8px 24px rgba(0,0,0,.4);
     --shadow-lg:0 16px 48px rgba(0,0,0,.5);
+    --focus-ring:0 0 0 3px color-mix(in oklch, var(--primary) 30%, transparent);
   }
 }
 html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--font-sans);background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
 .skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);padding:.75rem 1.5rem;background:var(--primary);color:var(--white);border-radius:var(--radius-sm);z-index:1000;font-weight:600}
 .skip-link:focus{top:1rem}
 img{max-width:100%;height:auto;display:block}
@@ -63,7 +66,7 @@ a:hover{color:var(--accent)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.625rem;padding:.875rem 1.75rem;border-radius:var(--radius);font-weight:600;font-size:1rem;cursor:pointer;transition:var(--transition);border:2px solid transparent;text-decoration:none}
 .btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .btn-primary{background:var(--primary);color:var(--white);border-color:var(--primary);box-shadow:var(--shadow)}
-.btn-primary:hover{background:var(--accent);border-color:var(--accent);color:#000;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-primary:hover{background:var(--primary-hover);border-color:var(--primary-hover);color:var(--white);transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .btn-primary:active{transform:translateY(0)}
 .btn-secondary{background:transparent;color:var(--primary);border-color:var(--primary)}
 .btn-secondary:hover{background:var(--primary);color:var(--white)}
@@ -72,7 +75,7 @@ a:hover{color:var(--accent)}
 .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:var(--header-h)}
 @media(prefers-color-scheme:dark){.header{background:rgba(15,17,21,.92);border-color:var(--border)}}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--header-h)}
-.logo{display:flex;align-items:center;gap:.75rem;font-weight:700;font-size:1.375rem;color:var(--text);text-decoration:none}
+.logo{display:flex;align-items:center;gap:.75rem;font-weight:700;font-size:1.375rem;color:var(--text);text-decoration:none;font-family:var(--font-sans)}
 .logo:hover{color:var(--primary)}
 .logo-icon{font-size:1.75rem;line-height:1}
 .nav{display:flex;align-items:center;gap:2.5rem}
@@ -81,7 +84,7 @@ a:hover{color:var(--accent)}
 .nav-link:hover{color:var(--primary)}
 .nav-link:hover::after{transform:scaleX(1);transform-origin:left}
 .cta-button{padding:.625rem 1.5rem;background:var(--primary);color:var(--white);border-radius:var(--radius);font-weight:600;font-size:.9375rem;transition:var(--transition)}
-.cta-button:hover{background:var(--accent);color:#000;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.cta-button:hover{background:var(--primary-hover);color:var(--white);transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .mobile-menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;z-index:101}
 .hamburger{display:block;width:26px;height:2px;background:var(--text);position:relative;transition:background .2s}
 .hamburger::before,.hamburger::after{content:&#39;&#39;;position:absolute;left:0;width:100%;height:2px;background:var(--text);transition:transform .25s, top .25s}
@@ -116,7 +119,7 @@ a:hover{color:var(--accent)}
 .hero::before{content:&#39;&#39;;position:absolute;inset:0;background:var(--pattern);opacity:0.6;pointer-events:none}
 .hero-content{position:relative;z-index:1}
 .hero-badge{display:inline-block;padding:.375rem 1rem;background:var(--accent);color:#000;font-weight:600;font-size:.8125rem;border-radius:999px;margin-bottom:1.25rem;letter-spacing:.025em}
-.hero-title{font-size:clamp(2.25rem,5.5vw,4rem);font-weight:800;line-height:1.1;margin:0 0 1.25rem;color:var(--text);letter-spacing:-0.02em}
+.hero-title{font-size:clamp(2.25rem,5.5vw,4rem);font-weight:800;line-height:1.1;margin:0 0 1.25rem;color:var(--text);letter-spacing:-0.02em;font-family:var(--font-sans)}
 .hero-subtitle{font-size:1.1875rem;color:var(--text-muted);margin:0 0 2rem;max-width:90%;line-height:1.6}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
 .hero-trust{font-size:.875rem;color:var(--text-light);font-weight:500;display:flex;align-items:center;gap:.5rem}
@@ -126,14 +129,14 @@ a:hover{color:var(--accent)}
 .hero-card::before{content:&#39;&#39;;position:absolute;top:0;left:0;right:0;height:4px;background:var(--gradient)}
 @media(prefers-color-scheme:dark){.hero-card{background:var(--bg-elevated);border-color:var(--border)}}
 .hero-card-icon{font-size:3rem;margin-bottom:1rem;display:inline-block;filter:drop-shadow(0 4px 12px rgba(0,0,0,.1))}
-.hero-card h3{margin:0 0 .75rem;font-size:1.375rem;font-weight:700;color:var(--text)}
+.hero-card h3{margin:0 0 .75rem;font-size:1.375rem;font-weight:700;color:var(--text);font-family:var(--font-sans)}
 .hero-card p{margin:0 0 1.5rem;color:var(--text-muted);font-size:1rem}
 .hero-card-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.75rem}
 .hero-card-list li{padding:.625rem 0 .625rem 1.75rem;position:relative;color:var(--text);font-size:.9375rem}
 .hero-card-list li::before{content:&#39;✓&#39;;position:absolute;left:0;top:.625rem;color:var(--accent);font-weight:700;font-size:1rem}
 .hero-card-list li:not(:last-child){border-bottom:1px solid var(--border)}
 .section-header{text-align:center;margin-bottom:3.5rem}
-.section-title{font-size:clamp(2rem,4.5vw,2.75rem);font-weight:800;margin:0 0 .75rem;color:var(--text);letter-spacing:-0.01em}
+.section-title{font-size:clamp(2rem,4.5vw,2.75rem);font-weight:800;margin:0 0 .75rem;color:var(--text);letter-spacing:-0.01em;font-family:var(--font-sans)}
 .section-subtitle{color:var(--text-muted);font-size:1.125rem;margin:0;max-width:600px;margin:0 auto}
 .services{padding:5.5rem 0}
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.75rem}
@@ -143,7 +146,7 @@ a:hover{color:var(--accent)}
 .service-card:hover::before{transform:scaleX(1)}
 @media(prefers-color-scheme:dark){.service-card{background:var(--bg-elevated);border-color:var(--border)}}
 .service-icon{font-size:2.5rem;margin-bottom:1rem;display:inline-block;filter:drop-shadow(0 4px 12px rgba(0,0,0,.1))}
-.service-title{margin:0 0 .625rem;font-size:1.1875rem;font-weight:700;color:var(--text)}
+.service-title{margin:0 0 .625rem;font-size:1.1875rem;font-weight:700;color:var(--text);font-family:var(--font-sans)}
 .service-desc{margin:0;color:var(--text-muted);font-size:.9375rem;line-height:1.6}
 .about{padding:5.5rem 0}
 .about-content{display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:center}
@@ -154,7 +157,7 @@ a:hover{color:var(--accent)}
 .about-features svg{flex-shrink:0;color:var(--accent);margin-top:.125rem;width:20px;height:20px}
 .about-stats{display:flex;gap:3rem;flex-wrap:wrap;margin-top:2.5rem}
 .stat{text-align:center;min-width:120px}
-.stat-number{display:block;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:800;color:var(--primary);line-height:1;letter-spacing:-0.02em}
+.stat-number{display:block;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:800;color:var(--primary);line-height:1;letter-spacing:-0.02em;font-family:var(--font-sans)}
 .stat-label{color:var(--text-muted);font-size:.875rem;margin-top:.375rem;font-weight:500}
 .testimonials{padding:5.5rem 0;background:linear-gradient(180deg, transparent 0%, var(--bg-elevated) 50%, transparent 100%);position:relative}
 .testimonials::before{content:&#39;&#39;;position:absolute;top:0;left:0;right:0;bottom:0;background:var(--pattern);opacity:0.3;pointer-events:none}
@@ -187,14 +190,14 @@ label{display:block;margin-bottom:.625rem;font-weight:500;color:var(--text);font
 .required{color:var(--accent);margin-left:.125rem}
 input,select,textarea{width:100%;padding:.9375rem 1.125rem;border:2px solid var(--border);border-radius:var(--radius);font-family:inherit;font-size:1rem;background:var(--bg);color:var(--text);transition:var(--transition)}
 @media(prefers-color-scheme:dark){input,select,textarea{background:var(--bg);border-color:var(--border);color:var(--text)}}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent)}
+input:focus,select:focus,textarea:focus{outline:none;box-shadow:var(--focus-ring)}
 input::placeholder,textarea::placeholder{color:var(--text-light)}
 .form-note{margin:1.25rem 0 0;font-size:.8125rem;color:var(--text-muted);text-align:center}
 .footer{background:var(--text);color:var(--white);padding:4rem 0 2rem;position:relative}
 .footer::before{content:&#39;&#39;;position:absolute;top:0;left:0;right:0;height:1px;background:var(--gradient)}
 @media(prefers-color-scheme:dark){.footer{background:#0a0c10}}
 .footer-content{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-.footer-brand .footer-logo{display:flex;align-items:center;gap:.75rem;font-weight:700;font-size:1.375rem;margin-bottom:1rem;color:var(--white);text-decoration:none}
+.footer-brand .footer-logo{display:flex;align-items:center;gap:.75rem;font-weight:700;font-size:1.375rem;margin-bottom:1rem;color:var(--white);text-decoration:none;font-family:var(--font-sans)}
 .footer-tagline{color:rgba(255,255,255,.65);margin:0;line-height:1.6;font-size:.9375rem}
 .footer-nav{display:flex;flex-direction:column;gap:.75rem}
 .footer-nav a{color:rgba(255,255,255,.65);font-size:.9375rem;transition:var(--transition)}
@@ -247,12 +250,18 @@ input::placeholder,textarea::placeholder{color:var(--text-light)}
                     <p class="hero-subtitle">Licensed, insured, and locally owned. Serving Jersey City, NJ and surrounding areas with quality workmanship.</p>
                     <div class="hero-actions">
                         <a href="tel:17188587070" class="btn btn-primary" aria-label="Call Downtown Plumbing &amp; Heating at +1-718-858-7070">
-                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             <span>Call Now: +1-718-858-7070</span>
                         </a>
                         <a href="#contact" class="btn btn-secondary">Free Estimate</a>
                     </div>
-                    <p class="hero-trust">Licensed &amp; Insured  •  Free Estimates  •  Same-Day Service Available</p>
+                    <div class="hero-trust">
+                        <span class="trust-item">✓ Licensed & Insured</span>
+                        <span class="trust-divider" aria-hidden="true"></span>
+                        <span class="trust-item">✓ Free Estimates</span>
+                        <span class="trust-divider" aria-hidden="true"></span>
+                        <span class="trust-item">✓ Same-Day Service</span>
+                    </div>
                 </div>
                 <div class="hero-visual" aria-hidden="true">
                     <div class="hero-card">
@@ -319,19 +328,19 @@ input::placeholder,textarea::placeholder{color:var(--text-light)}
                         <p>We&#39;ve built our reputation in Jersey City, NJ on honesty, reliability, and quality workmanship. No hidden fees, no upsells — just professional service at a fair price.</p>
                         <ul class="about-features">
                             <li>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 Licensed, bonded, and insured
                             </li>
                             <li>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 Upfront pricing — no surprises
                             </li>
                             <li>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 Background-checked technicians
                             </li>
                             <li>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 Satisfaction guaranteed
                             </li>
                         </ul>
@@ -384,14 +393,14 @@ input::placeholder,textarea::placeholder{color:var(--text-light)}
                         <p>Ready to get started? Call us or fill out the form for a free, no-obligation estimate.</p>
                         <div class="contact-details">
                             <a href="tel:17188587070" class="contact-item">
-                                <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                                 <div>
                                     <span class="contact-label">Call Us</span>
                                     <span class="contact-value">+1-718-858-7070</span>
                                 </div>
                             </a>
                             <a href="mailto:service@antonplumbinghvac.com" class="contact-item">
-                                <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                 <div>
                                     <span class="contact-label">Email Us</span>
                                     <span class="contact-value">service@antonplumbinghvac.com</span>
